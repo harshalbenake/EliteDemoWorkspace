@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ff9500"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:weightSum="100">
+
+    <fragment
+        android:id="@+id/fragment_top"
+        android:name="com.elitedemoworkspace.TopFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="50" />
+
+    <fragment
+        android:id="@+id/fragment_bottom"
+        android:name="com.elitedemoworkspace.BottomFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="50" />
+</LinearLayout>
