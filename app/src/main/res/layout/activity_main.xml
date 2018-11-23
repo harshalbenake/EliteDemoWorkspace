@@ -2,38 +2,68 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:gravity="center"
     android:layout_width="match_parent"
-    android:background="#00bf35"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="#00ec5a"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".activity.MainActivity">
 
     <TextView
-        android:id="@+id/tv_msg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#ffffff"
-        android:textSize="25sp"
         android:layout_gravity="left"
         android:layout_margin="16dp"
-        android:text="Hello World!" />
+        android:text="Elite"
+        android:textColor="#003cff"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_margin="16dp"
+        android:textSize="25sp" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Software"
+            android:textColor="@android:color/white" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hardware"
+
+            android:textColor="@android:color/white" />
+    </RadioGroup>
 
     <Button
         android:id="@+id/btn_pressme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_margin="5dp"
         android:text="Press Me" />
 
     <Button
-        android:id="@+id/btn_start"
+        android:id="@+id/btn_static"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="Start" />
+        android:layout_margin="5dp"
+        android:text="Static" />
 
 
-
+    <Button
+        android:id="@+id/btn_dynamic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="Dynamic" />
 
 </LinearLayout>

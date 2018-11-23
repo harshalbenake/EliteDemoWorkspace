@@ -1,4 +1,4 @@
-package com.elitedemoworkspace;
+package com.elitedemoworkspace.receiver;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

@@ -1,7 +1,6 @@
-package com.elitedemoworkspace;
+package com.elitedemoworkspace.adapter;
 
 import android.app.Activity;
-import android.content.Context;
 import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,8 +8,10 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.elitedemoworkspace.PersonInfo;
+import com.elitedemoworkspace.R;
+
 import java.util.ArrayList;
-import java.util.zip.Inflater;
 
 public class CustomAdapter extends BaseAdapter {
     FragmentActivity mActivity;

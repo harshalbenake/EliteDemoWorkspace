@@ -1,14 +1,15 @@
-package com.elitedemoworkspace;
+package com.elitedemoworkspace.activity;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.AppCompatActivity;
 
-public class SecondActivity extends FragmentActivity {
+import com.elitedemoworkspace.R;
+
+public class StaticListActivity extends FragmentActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_second);
+        setContentView(R.layout.activity_staticlist);
     }
 }
