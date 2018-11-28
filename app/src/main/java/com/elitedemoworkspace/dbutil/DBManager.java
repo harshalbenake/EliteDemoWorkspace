@@ -1,4 +1,4 @@
-package com.elitedemoworkspace.DBUtil;
+package com.elitedemoworkspace.dbutil;
 
 import java.util.ArrayList;
 import java.util.List;

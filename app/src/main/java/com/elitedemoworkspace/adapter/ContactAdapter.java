@@ -6,13 +6,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.elitedemoworkspace.DBUtil.Contact;
-import com.elitedemoworkspace.PersonInfo;
+import com.elitedemoworkspace.dbutil.Contact;
 import com.elitedemoworkspace.R;
+import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ContactAdapter extends BaseAdapter {
@@ -46,6 +46,7 @@ public class ContactAdapter extends BaseAdapter {
         if (convertView == null) {
             convertView = mInflater.inflate(R.layout.rowitem_contacts, null);
             holder = new ViewHolder();
+            holder.iv_contact_profile = (ImageView) convertView.findViewById(R.id.iv_contact_profile);
             holder.tv_contact_name = (TextView) convertView.findViewById(R.id.tv_contact_name);
             holder.tv_contact_email = (TextView) convertView.findViewById(R.id.tv_contact_email);
             holder.tv_contact_address = (TextView) convertView.findViewById(R.id.tv_contact_address);
@@ -62,10 +63,14 @@ public class ContactAdapter extends BaseAdapter {
         holder.tv_contact_address.setText(contact.address);
         holder.tv_contact_gender.setText(contact.gender);
         holder.tv_contact_mobile.setText(contact.mobile);
+
+        Picasso.get().load("https://www.freeiconspng.com/uploads/profile-icon-28.png").into(holder.iv_contact_profile);
+
         return convertView;
     }
 
     private class ViewHolder {
+        ImageView iv_contact_profile;
         TextView tv_contact_name;
         TextView tv_contact_email;
         TextView tv_contact_address;

@@ -1,4 +1,4 @@
-package com.elitedemoworkspace.DBUtil;
+package com.elitedemoworkspace.dbutil;
 
 import android.app.Application;
 import android.database.sqlite.SQLiteDatabase;

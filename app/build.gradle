@@ -4,22 +4,30 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.elitedemoworkspace"
-        minSdkVersion 19
+        minSdkVersion 20
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
     }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    lintOptions {
+        abortOnError false
+    }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //noinspection GradleCompatible
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.squareup.okhttp3:okhttp:3.7.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.7.0'
+    implementation 'com.squareup.picasso:picasso:+'
+    implementation files('libs/cordova-2.9.0.jar')
+    implementation project(':customlibs')
 }

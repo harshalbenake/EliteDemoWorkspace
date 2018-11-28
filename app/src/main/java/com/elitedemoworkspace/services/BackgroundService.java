@@ -94,15 +94,15 @@ public class BackgroundService extends Service {
             }
             System.out.println("packageName: "+packageName);
 
-
-           /* if("com.application.zomato.ordering".equalsIgnoreCase(packageName)
-                   *//* ||"com.facebook.katana".contains(packageName)*//*){
+            if(!packageName.equalsIgnoreCase("") && ("com.application.zomato.ordering".equalsIgnoreCase(packageName)
+                    ||"com.facebook.katana".equalsIgnoreCase(packageName)
+                   ||"com.whatsapp".equalsIgnoreCase(packageName))){
             Intent intent = new Intent(context, LockScreenActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP |
                     Intent.FLAG_ACTIVITY_CLEAR_TASK |
                     Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(intent);
-            }*/
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

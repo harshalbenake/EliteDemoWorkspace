@@ -1,4 +1,4 @@
-package com.elitedemoworkspace.DBUtil;
+package com.elitedemoworkspace.dbutil;
 
 public class Contact {
 

@@ -1,16 +1,14 @@
 package com.elitedemoworkspace.api.asynctask;
 
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.os.AsyncTask;
-import android.support.v4.util.ArrayMap;
 import android.widget.Toast;
 
 
-import com.elitedemoworkspace.DBUtil.Contact;
-import com.elitedemoworkspace.DBUtil.DBManager;
-import com.elitedemoworkspace.activity.DynamicListActivity;
+import com.elitedemoworkspace.dbutil.Contact;
+import com.elitedemoworkspace.dbutil.DBManager;
 import com.elitedemoworkspace.api.OKHTTPService;
+import com.elitedemoworkspace.fragment.BottomFragment;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -19,24 +17,24 @@ import org.json.JSONObject;
  * This async task is used for Contact Service
  */
 public class ContactService extends AsyncTask<String, String, String> {
-    Context mContext;
+    BottomFragment mContext;
     private ProgressDialog mProgressDialog;
 
-    public ContactService(Context context) {
+    public ContactService(BottomFragment context) {
         this.mContext = context;
     }
 
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
-        if (OKHTTPService.isOnline(mContext)) {
-            mProgressDialog = new ProgressDialog(mContext);
+        if (OKHTTPService.isOnline(mContext.getActivity())) {
+            mProgressDialog = new ProgressDialog(mContext.getActivity());
             mProgressDialog.setMessage("Loading Details...");
             mProgressDialog.setCancelable(false);
             mProgressDialog.setCanceledOnTouchOutside(false);
             mProgressDialog.show();
         } else {
-            Toast.makeText(mContext, "Not connected to Internet", Toast.LENGTH_SHORT).show();
+            Toast.makeText(mContext.getActivity(), "Not connected to Internet", Toast.LENGTH_SHORT).show();
             cancel(true);
         }
     }
@@ -64,7 +62,7 @@ public class ContactService extends AsyncTask<String, String, String> {
                     contact.address=srrAddress;
                     contact.gender=srrGender;
                     contact.mobile=strMobile;
-                    new DBManager(mContext).addData(contact);
+                    new DBManager(mContext.getActivity()).addData(contact);
                 }
 
             } catch (Exception e) {
@@ -82,8 +80,8 @@ public class ContactService extends AsyncTask<String, String, String> {
                 mProgressDialog.dismiss();
             }
 
-            if(mContext instanceof DynamicListActivity){
-                ((DynamicListActivity) mContext).setAdapter();
+            if(mContext instanceof BottomFragment){
+                ((BottomFragment) mContext).setAdapter();
             }
         } catch (Exception e) {
             e.printStackTrace();
