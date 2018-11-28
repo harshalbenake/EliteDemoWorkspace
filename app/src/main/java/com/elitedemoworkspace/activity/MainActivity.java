@@ -170,9 +170,12 @@ public class MainActivity extends AppCompatActivity {
                 Manifest.permission.READ_CALENDAR,
                 Manifest.permission.WRITE_CALENDAR,
                 Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.BLUETOOTH,
+                Manifest.permission.BLUETOOTH_ADMIN,
+                Manifest.permission.ACCESS_WIFI_STATE,
+                Manifest.permission.CHANGE_WIFI_STATE,
                 Manifest.permission.READ_PHONE_STATE};
         ActivityCompat.requestPermissions(this, permissions, 10);
-
 
         boolean usage_granted = false;
         AppOpsManager appOps = (AppOpsManager)getSystemService(Context.APP_OPS_SERVICE);

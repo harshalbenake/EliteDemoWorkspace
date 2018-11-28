@@ -18,7 +18,16 @@
         android:layout_height="wrap_content"
         android:textSize="16sp"
         android:id="@+id/tv_gyroscope"/>
-
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:id="@+id/tb_wifi"/>
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:id="@+id/tb_bluetooth"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
